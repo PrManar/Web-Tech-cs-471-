@@ -1,0 +1,12 @@
+
+<h1>Task 3 — Oldest book per publisher</h1>
+<table>
+  <tr><th>Publisher</th><th>Oldest Book</th><th>Pub Date</th></tr>
+  {% for p in publishers %}
+  <tr>
+    <td>{{ p.name }}</td>
+    <td>{{ p.oldest_title|default:"—" }}</td>
+    <td>{{ p.oldest_pubdate|date:"Y-m-d H:i" }}</td>
+  </tr>
+  {% endfor %}
+</table>

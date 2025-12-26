@@ -1,0 +1,38 @@
+
+{# templates/bookmodule/bookList.html #}
+{% extends "layouts/base.html" %}
+{% load static %}
+
+{% block title %} Book List {% endblock %}
+
+{% block content %}
+<h2>Search results{% if keyword %} for "{{ keyword }}"{% endif %}</h2>
+
+{% if books %}
+    <table>
+        <thead>
+            <tr><th>ID</th><th>Title</th><th>Author</th></tr>
+        </thead>
+        <tbody>
+            {% for book in books %}
+                <tr>
+                    <td>{{ book.id }}</td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                </tr>
+            {% endfor %}
+
+            {% for obj in books %}
+                 ID: {{ obj.id }}, Title: {{ obj.title }}
+                 <hr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% else %}
+    <p>No books matched your search.</p>
+{% endif %}
+
+<a href="{% url 'search' %}">Back to search</a>
+
+{% endblock content %}
+

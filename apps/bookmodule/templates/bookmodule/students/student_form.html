@@ -1,0 +1,13 @@
+<h1>{% if Student %}Edit{% else %}Add{% endif %} Student</h1>
+<form method="post">
+  {% csrf_token %}
+  <fieldset>
+    <legend>Student</legend>
+    {{ sform.as_p }}
+  </fieldset>
+  <fieldset>
+    <legend>Address</legend>
+    {{ aform.as_p }}
+  </fieldset>
+  <button type="submit">Save</button>
+</form>

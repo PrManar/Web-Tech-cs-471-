@@ -1,0 +1,9 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+  <h2>{{ action }} Book (Part2)</h2>
+  <form method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">{{ action }}</button>
+  </form>
+  <a href= {% url 'listbooks_part2' %}>Back to list</a>
+{% endblock %}

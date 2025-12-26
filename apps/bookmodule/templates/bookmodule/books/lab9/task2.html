@@ -1,0 +1,7 @@
+
+<h1>Task 2 — Publisher total stock</h1>
+<ul>
+  {% for p in publishers %}
+    <li>{{ p.name }} — total stock: {{ p.total_stock|default:0 }}</li>
+  {% endfor %}
+</ul>

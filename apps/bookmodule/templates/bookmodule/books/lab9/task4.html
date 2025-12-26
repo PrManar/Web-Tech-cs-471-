@@ -1,0 +1,13 @@
+
+<h1>Task 4 — Price stats per publisher</h1>
+<table>
+  <tr><th>Publisher</th><th>Avg</th><th>Min</th><th>Max</th></tr>
+  {% for p in publishers %}
+  <tr>
+    <td>{{ p.name }}</td>
+    <td>{{ p.avg_price|floatformat:2 }}</td>
+    <td>{{ p.min_price|floatformat:2 }}</td>
+    <td>{{ p.max_price|floatformat:2 }}</td>
+  </tr>
+  {% endfor %}
+</table>

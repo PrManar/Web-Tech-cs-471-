@@ -1,0 +1,20 @@
+{% extends 'layouts/base.html' %}
+{% block content %}
+  <a href={% url 'addbook_part1' %}>Add new book</a>
+  <table>
+    <tr><th>Title</th><th>Author</th><th>Actions</th></tr>
+    {% for book in books %}
+      <tr>
+        <td>{{ book.title }}</td>
+        <td>{{ book.author }}</td>
+        <td>
+          <a href= {% url 'editbook_part1' book.id %}>Edit</a>
+          |
+          <a href= {% url 'deletebook_part1' book.id %}">Delete</a>
+        </td>
+      </tr>
+    {% empty %}
+      <tr><td colspan="3">No books found.</td></tr>
+    {% endfor %}
+  </table>
+{% endblock %}

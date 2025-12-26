@@ -1,0 +1,19 @@
+
+<!doctype html>
+<html>
+<head><title>Books - {{ title }}</title></head>
+<body>
+  <h1>{{ title }}</h1>
+  {% if summary %}
+    <div>{{ summary }}</div>
+  {% endif %}
+  <ul>
+  {% for b in objects %}
+    <li>{{ b.title }} — {{ b.author }} — {{ b.price }} — edition: {{ b.edition }}</li>
+  {% empty %}
+    <li>No books found.</li>
+  {% endfor %}
+  </ul>
+</body>
+</html>
+

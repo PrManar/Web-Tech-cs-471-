@@ -1,0 +1,36 @@
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+</head>
+<body>
+  <h1>{{ title }}</h1>
+
+  <h2>Addresses</h2>
+  {% if addresses %}
+    <ul>
+      {% for addr in addresses %}
+        <li>{{ addr.id }} — {{ addr.city }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No addresses found. You can create addresses in the Django admin or shell.</p>
+  {% endif %}
+
+  <h2>Students</h2>
+  {% if students %}
+    <ul>
+      {% for s in students %}
+        <li>{{ s.id }} — {{ s.name }} — age: {{ s.age }} — city: {{ s.address.city if s.address else "N/A" }}</li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No students found. Create them via admin or the shell.</p>
+  {% endif %}
+
+  <hr>
+  <p>Tip: If you don't see data, run: <code>python manage.py makemigrations</code> and <code>python manage.py migrate</code>, then create sample rows in admin or shell.</p>
+</body>
+</html>

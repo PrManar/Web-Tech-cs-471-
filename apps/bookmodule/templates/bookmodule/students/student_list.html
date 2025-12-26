@@ -1,0 +1,16 @@
+<h1>Students</h1>
+
+<a href="{% url 'student_add' %}">Add student</a>
+
+<ul>
+  {% for s in students %}
+    <li>
+      {{ s.first_name }} {{ s.last_name }} - {{ s.email }}
+      {% if s.address %} – {{ s.address }} {% endif %}
+      <a href="{% url 'student_edit' s.pk %}">Edit</a>
+      <a href="{% url 'student_delete' s.pk %}">Delete</a>
+    </li>
+  {% empty %}
+    <li>No students yet</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,13 @@
+
+<h1>Task 1 — Book availability</h1>
+<p>Total stock: {{ total }}</p>
+<table>
+  <tr><th>Title</th><th>Quantity</th><th>Availability (%)</th></tr>
+  {% for b in books %}
+  <tr>
+    <td>{{ b.title }}</td>
+    <td>{{ b.quantity }}</td>
+    <td>{{ b.availability|floatformat:2 }}</td>
+  </tr>
+  {% endfor %}
+</table>

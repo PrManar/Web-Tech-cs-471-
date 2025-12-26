@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Students (Many Addresses)</title>
+</head>
+<body>
+
+<h1>Students (Many-to-Many)</h1>
+
+<a href="{% url 'student2_add' %}">➕ Add New Student</a>
+<br><br>
+
+<table border="1" cellpadding="8">
+    <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Email</th>
+        <th>Addresses</th>
+        <th>Actions</th>
+    </tr>
+
+    {% for student in students %}
+    <tr>
+        <td>{{ student.id }}</td>
+        <td>{{ student.first_name }}</td>
+        <td>{{ student.last_name }}</td>
+        <td>{{ student.email }}</td>
+        <td>
+            {% for addr in student.addresses.all %}
+                {{ addr }}<br>
+            {% empty %}
+                No addresses
+            {% endfor %}
+        </td>
+        <td>
+            <a href="{% url 'student2_edit' student.id %}">✏ Edit</a>
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="6">No students found.</td>
+    </tr>
+    {% endfor %}
+
+</table>
+
+<br>
+<a href="{% url 'student_list' %}">⬅ Back to Task 1</a>
+
+</body>
+</html>

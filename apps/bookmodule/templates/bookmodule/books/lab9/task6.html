@@ -1,0 +1,7 @@
+
+<h1>Task 6 — Count (price>50, 1<=quantity<5)</h1>
+<ul>
+  {% for p in publishers %}
+    <li>{{ p.name }} — matching books: {{ p.filtered_count }}</li>
+  {% endfor %}
+</ul>

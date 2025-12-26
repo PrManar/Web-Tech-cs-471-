@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task 4 - Tables</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+</head>
+<body>
+
+    <h1>Example of Tables</h1>
+
+    <h3>Table 1: Table of Fruits and Their Prices</h3>
+
+    <table class="fruit-table" border="1">
+        <tr>
+            <th>Fruit</th>
+            <th>Price</th>
+        </tr>
+        <tr>
+            <td>Apple</td>
+            <td>$0.25</td>
+        </tr>
+        <tr>
+            <td>Orange</td>
+            <td>$0.50</td>
+        </tr>
+        <tr>
+            <td>Banana</td>
+            <td>$1.00</td>
+        </tr>
+        <tr>
+            <td>Pineapple</td>
+            <td>$2.00</td>
+        </tr>
+        <tr>
+            <th>Total</th>
+            <th>$3.75</th>
+        </tr>
+    </table>
+
+    <br><br>
+
+    <h3>Table 2: A more complex sample table</h3>
+
+    <table class="camel-table" border="1">
+        <tr>
+            <td rowspan="2" class="camel-img">
+               <img src="{% static 'b1.jpg' %}" alt="My Image" width="200" height="120">
+            </td>
+            <td colspan="4" class="camel-title">
+                <b>Camelid comparison</b><br>
+                <small>Approximate as of 6/2011</small>
+            </td>
+        </tr>
+        <tr>
+            <th># of humps</th>
+            <th>Indigenous region</th>
+            <th>Spits?</th>
+            <th>Produces wool?</th>
+        </tr>
+        <tr>
+            <td>Dromedary</td>
+            <td>1</td>
+            <td>Arabian Peninsula</td>
+            <td>Yes</td>
+            <td>No</td>
+        </tr>
+        <tr>
+            <td>Camels (bactrian)</td>
+            <td>2</td>
+            <td>Africa/Asia</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Llamas</td>
+            <td>1</td>
+            <td>Andes Mountains</td>
+            <td>Yes</td>
+            <td>Yes</td>
+        </tr>
+    </table>
+
+</body>
+</html>

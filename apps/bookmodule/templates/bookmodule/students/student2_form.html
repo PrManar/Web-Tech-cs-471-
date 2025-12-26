@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add / Edit Student (Many-to-Many)</title>
+</head>
+<body>
+
+<h1>
+    {% if student %}
+        Edit Student (Many Addresses)
+    {% else %}
+        Add Student (Many Addresses)
+    {% endif %}
+</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>First Name:</label><br>
+    {{ form.first_name }}<br><br>
+
+    <label>Last Name:</label><br>
+    {{ form.last_name }}<br><br>
+
+    <label>Email:</label><br>
+    {{ form.email }}<br><br>
+
+    <label>Addresses:</label><br>
+    {{ form.addresses }}<br><br>
+
+    <button type="submit">💾 Save</button>
+
+</form>
+
+<br>
+<a href="{% url 'student2_list' %}">⬅ Back to Students List</a>
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Listing Example</title>
+  <link rel="stylesheet" href="{% static 'bookmodule/css/main.css' %}">
+</head>
+<body>
+  <h1>Lists Example</h1>
+
+  <h2>Unordered List</h2>
+  <ul>
+    <li>Fruits
+      <ul>
+        <li>Apple</li>
+        <li>Orange</li>
+        <li>Banana</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h2>Ordered List</h2>
+  <ol>
+    <li>Step 1</li>
+    <li>Step 2
+      <ol>
+        <li>Substep A</li>
+        <li>Substep B</li>
+      </ol>
+    </li>
+  </ol>
+</body>
+</html>

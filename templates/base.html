@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}Library System{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'usermodule/css/auth.css' %}">
+</head>
+<body>
+
+    <nav>
+        <a href="/books/">Books</a> |
+        <a href="/books/students/">Students</a> |
+        <a href="/users/register/">Register</a> |
+        <a href="/users/login/">Login</a>
+    </nav>
+
+    <hr>
+
+    {% block content %}{% endblock %}
+
+</body>
+</html>

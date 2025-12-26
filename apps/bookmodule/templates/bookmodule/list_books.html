@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+<head>
+  <title>List of Books</title>
+  <meta name="keywords" content="Books, recent, Learning, library">
+  <meta name="description" content="Books website">
+  <meta name="author" content="author name">
+  <link rel="icon" href="{% static 'qu-icon.png' %}">
+  <meta charset="UTF-8">
+  <style>  
+    h1{
+      color: green;
+    }
+ 
+    h2{
+      color: lightskyblue;
+    }
+ 
+    p {
+      font-family: verdana;
+      font-size: 20px;
+    }
+    
+  </style>
+  <link rel="stylesheet" href="{% static 'styles.css' %}">
+
+</head>
+<body>
+
+    <div class="topnav"> 
+      <a class="active" href="{% url "books.index" %}">Home</a> <!-- URL template tag -->
+      <a href="{% url "books.list_books" %}">List Books</a> <!-- URL template tag -->
+      <a href="{% url "books.aboutus" %}">About</a> <!-- URL template tag -->
+    </div>
+  
+ 
+    <h1>List of Books</h1>
+   
+    <a href="{% url 'books.view_one_book' 1 %}"><h2>Internet & World Wide Web How to Program</h2>
+        <img src="{% static 'book1.jpg' %}" alt="Book1 img desc" width="200" height="200">
+    </a> 
+    <hr>
+ 
+    <h2>2 C++ How to Program, Late Objects Version</h2>
+    <img src="{% static 'book2.jpg' %}" alt="Book2 img desc" width="200" height="200">
+    <hr>
+ 
+    <h2>3 Images in Another Folder</h2>
+    <img src="{% static 'book3.jpg' %}" alt="Book3 img desc" width="200" height="200">
+    <hr>
+ 
+</body>
+</html>
+ 

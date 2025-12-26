@@ -1,0 +1,33 @@
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+}
+
+a.example-link {
+  text-decoration: none;
+  color: blue;
+  background-color: #e0f0ff;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* حالات الرابط */
+a.example-link:visited {
+  color: purple;
+}
+
+a.example-link:hover {
+  color: white;
+  background-color: blue;
+}
+
+a.example-link:active {
+  color: yellow;
+  background-color: navy;
+}

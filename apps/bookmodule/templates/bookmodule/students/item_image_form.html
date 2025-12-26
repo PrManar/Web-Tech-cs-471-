@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Image</title>
+</head>
+<body>
+
+<h1>Upload New Image</h1>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <label>Image Title:</label><br>
+    {{ form.title }}<br><br>
+
+    <label>Select Image:</label><br>
+    {{ form.image }}<br><br>
+
+    <button type="submit">⬆ Upload</button>
+</form>
+
+<br>
+<a href="{% url 'item_image_list' %}">⬅ Back to Image List</a>
+
+</body>
+</html>
